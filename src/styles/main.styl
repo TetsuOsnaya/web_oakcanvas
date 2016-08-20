@@ -1,0 +1,180 @@
+@import ('normalize.css')
+@import ('./NoComp/reset')
+@import ('./NoComp/layout')
+
+
+.content
+  border 5px solid #4CAF50
+  &-section1
+    width 100%
+    height calc(100vh - 10px)
+    display flex
+    flex-direction column
+    justify-content center
+    text-align center
+    
+    &-img
+      margin 0 auto
+      img
+        height 50vh
+    &-boton
+      width 6em
+      margin 0 auto
+
+  &-section2
+    width 100%
+    padding-top 10px
+    text-align center
+    
+    &-title
+      width 50%
+      margin 10px auto 0 auto
+      text-align center
+    &-img
+      width 100%
+      &-template
+        height 30vh
+        width 80%
+        margin 0 auto
+        overflow hidden
+        display none
+        img
+          height 100%
+      .mobile
+        display block
+  &-section3, &-section4
+    width 100%
+    padding-top 10px
+    text-align center
+    
+    &-title
+      width 50%
+      margin 10px auto 0 auto
+      text-align center
+    &-texto
+      font-size 1.1em
+      padding 0  1em
+  .historias
+    display none
+@media (min-width: 430px) and (orientation: portrait), (min-width: 741px) and (orientation: landscape)
+  .content
+    border 10px solid #4CAF50
+    &-section1
+      height calc(100vh - 10px)
+      &-img
+        margin 0 auto
+        img
+          height 50vh
+      &-boton
+        width 6em
+        margin 0 auto
+
+    &-section2
+      width 100%
+      padding-top 10px
+      text-align center
+      
+      &-title
+        width 50%
+        margin 10px auto 0 auto
+        text-align center
+      &-img
+        width 95%
+        margin 0 auto
+        display flex
+        flex-direction row
+        flex-wrap wrap
+        h4
+          display none
+        &-template
+          height auto
+          width 50%
+          overflow hidden
+          display block
+          box-sizing border-box
+          img
+            height 100%
+          h4
+            display block
+
+
+    &-section3, &-section4
+      width 100%
+      padding-top 10px
+      text-align center
+      
+      &-title
+        width 50%
+        margin 10px auto 0 auto
+        text-align center
+      &-texto
+        padding 0  1em
+      .historias
+        Width 100%
+        display flex
+        flex-direction row
+        flex-wrap wrap
+        &-img
+          width 30%
+          img
+            width 100%
+        &-hist
+          font-size .8em
+          width 70%
+
+@media (min-width: 1200px) and (orientation: landscape)
+  .content
+    &-section2
+      width 1200px
+      margin 0 auto
+      padding-top 10px
+      text-align center
+      
+      &-title
+        width 50%
+        margin 10px auto 0 auto
+        text-align center
+      &-img
+        width 95%
+        margin 0 auto
+        display flex
+        flex-direction row
+        flex-wrap wrap
+        h4
+          display none
+        &-template
+          height auto
+          width 50%
+          overflow hidden
+          display block
+          box-sizing border-box
+          img
+            height 100%
+          h4
+            display block
+
+
+    &-section3, &-section4
+      width 1200px
+      margin 0 auto
+      padding-top 10px
+      text-align center
+      
+      &-title
+        width 50%
+        margin 10px auto 0 auto
+        text-align center
+      &-texto
+        padding 0  1em
+      .historias
+        Width 100%
+        display flex
+        flex-direction row
+        flex-wrap wrap
+        &-img
+          width 30%
+          img
+            width 100%
+        &-hist
+          font-size .8em
+          width 70%

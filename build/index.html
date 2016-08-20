@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- <script type="text/javascript" src=".js"></script> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Rancho|Lato:400,700,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" >
+  <title>OakCanvas</title>
+
+</head>
+<body>
+  <div class="container" id="mainPanel">
+    <header>
+      <div class="header">
+        <div class="header-mobile">
+          <div class="header-mobile-img">
+            <img src="./img/Logo-Oak-Icon.png" alt="OakCanvas Logo">
+          </div>
+          <button type="button" id="bMenu" class="header-mobile-bMenu fa fa-bars"></button>
+        </div>
+        <ul class="header-navbar" id="sidePanel">
+          <li class="item"><a href="#Inicio">Inicio</a></li>
+          <li class="item"><a href="#Portafolio">Portafolio</a></li>
+          <li class="item"><a href="#Servicio">Servicio</a></li>
+          <li class="item"><a href="#OakCanvas">OakCanvas</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <section>
+        <div class="content-section1" id="Inicio">
+          <div class="content-section1-img">
+            <img src="./img/Logo-Oak-Icon.png" alt="Logo Oak" />
+          </div>
+          <h1>OakCanvas</h1>
+          <h2>"El desarrollo web nos mueve"</h2>
+          <a href="#Portafolio" class="content-section1-boton">
+            Ver Portafolio<span class="fa fa-chevron-down"></span>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-section2" id="Portafolio">
+          <div class="content-section2-title">
+            <h3>Portafolio</h3>
+          </div>
+          <div class="content-section2-img">
+            <h4>Hyperspace</h4>
+            <div class="content-section2-img-template mobile">
+              <img src="./img/hyperspace.jpg" alt="Template"/>
+              <div class="nombre">
+                <h4>Hyperspace</h4>
+              </div>
+            </div>
+
+            <h4>Multiverse</h4>
+            <div class="content-section2-img-template mobile">
+              <img src="./img/multiverse.jpg" alt="Template"/>
+              <h4>Multiverse</h4>
+            </div>
+
+            <div class="content-section2-img-template ">
+              <img src="./img/hyperspace.jpg" alt="Template"/>
+              <h4>Multiverse</h4>
+            </div>
+
+            <div class="content-section2-img-template ">
+              <img src="./img/multiverse.jpg" alt="Template"/>
+              <h4>Multiverse</h4>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+      <section>
+        <div class="content-section4" id="Servicio">
+          <div class="content-section4-title">
+            <h3>Diseñamos y Desarrollamos tu sitio web</h3>
+          </div>
+          <div class="content-section4-texto">
+            <p>Creamos estrategias efectivas de imagen y posición en Internet</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="content-section3" id="OakCanvas">
+          <div class="content-section3-title">
+            <h3>OakCanvas</h3>
+          </div>
+          <div class="content-section3-texto">
+            <p>Somos jóvenes curioso que buscamos la oportunidad de explorar nuevas ideas y la posibilidad de llevar a cabo esta exploración junto con otras personas que comparten nuestro entusiasmo.</p>
+          </div>
+          <div class="historias">
+            <div class="historias-img">
+              <img src="./img/Logo-Oak-Icon.png" alt="">
+            </div>
+            <div class="historias-hist">
+              <h4>Tetsu</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, veritatis blanditiis iste rem molestiae beatae dolorem necessitatibus, sit, laborum tempore officia vitae quam quidem nihil voluptatem ipsum consequatur reiciendis eum.</p>
+            </div>
+          </div>
+          <div class="historias">
+            <div class="historias-img">
+              <img src="./img/Logo-Oak-Icon.png" alt="">
+            </div>
+            <div class="historias-hist">
+              <h4>Jafet</h4>
+              <p>Hola mi nombre es Set Jafet Renedo Ortega :)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.6/hammer.min.js"></script>
+		<script type="text/javascript">
+			var mainPanel=document.getElementById("mainPanel");
+			var sidePanel=document.getElementById("sidePanel");
+      $('#bMenu').click(function () {
+        sidePanel.classList.toggle("header-navbar-open");
+      });
+      $('.item').click(function () {
+        sidePanel.classList.toggle("header-navbar-open");
+      });
+			var hammerPanel = new Hammer(mainPanel);
+			var hammerSide = new Hammer(sidePanel);
+
+
+			hammerPanel.on("swiperight", function  () {
+				sidePanel.classList.toggle("header-navbar-open");
+			});
+			hammerPanel.on("swipeleft", function  () {
+				sidePanel.classList.toggle("header-navbar-open");
+			});
+
+      $(document).scroll(function (ev) {
+        var pos=$(this).scrollTop();
+        console.log(pos);
+        if (pos>=20) {
+          $('.header').css({'position':'fixed','padding':'0 20px 0', 'height':'70px','background-color':'#FFF'});
+        }else{$('.header').css({'position':'absolute','padding':'20px 20px 0','background-color':'transparent','color':'#BFF2B4'});}
+      });
+      $('ul li a').on('click',function(e){
+        sidePanel.classList.toggle("navBar-visible");
+        //prevenir en comportamiento predeterminado del enlace
+        e.preventDefault();
+        //obtenemos el id del elemento en el que debemos posicionarnos
+        var strAncla=$(this).attr('href');
+        //utilizamos body y html, ya que dependiendo del navegador uno u otro no funciona
+        $('body,html').stop(true,true).animate({
+          //realizamos la animacion hacia el ancla
+          scrollTop: $(strAncla).offset().top - 70
+        },1000);
+      });
+	  </script>
+</body>
+</html>
